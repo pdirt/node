@@ -52,7 +52,7 @@ function processIncludes(inputFile, input, cb) {
         // Add comments to let the HTML generator know how the anchors for
         // headings should look like.
         includeData[fname] = `<!-- [start-include:${fname}] -->\n` +
-                             inc + `\n<!-- [end-include:${fname}] -->\n`;
+                             `${inc}\n<!-- [end-include:${fname}] -->\n`;
         input = input.split(include + '\n').join(includeData[fname] + '\n');
         if (incCount === 0) {
           return cb(null, input);
